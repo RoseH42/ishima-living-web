@@ -1,0 +1,107 @@
+
+.navbar {
+    position: relative;
+    z-index: 1001;
+
+    @include media-breakpoint-up (lg) {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    .navbar-brand img {
+        height: 28px;
+
+        @include media-breakpoint-up (lg) {
+            height: 56px;
+        }
+    }
+
+    .nav-bg {
+        border-radius: 12px;
+        background-color: $white;
+        padding: $spacing-12 $spacing-32 $spacing-12 $spacing-40;
+    }
+
+    .navbar-collapse {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+
+        z-index: 1;
+        background-color: $white;
+    }
+
+    &::after {
+        content: "";
+        position: fixed;
+        top: 60px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+
+        z-index: 0;
+
+        @include media-breakpoint-up(lg) {
+            content: none;
+        }
+    }
+
+        &:has(.navbar-toggler:not(.collapsed))::after {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+}
+
+.navbar-toggler {
+    .menu-icon {
+        display: inline-block;
+    }
+
+    .close-icon {
+        display: none;
+    }
+
+    // 除了 .collapsed 時
+    &:not(.collapsed) {
+        .menu-icon {
+            display: none;
+        }
+
+        .close-icon {
+            display: inline-block;
+        }
+
+    }
+}
+
+.navbar-actions:has(.navbar-toggler:not(.collapsed)) {
+    .account-wrapper {
+        display: none;
+    }
+}
+
+.material-symbols-outlined.filled {
+    font-variation-settings:
+    'FILL' 1,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+}
+
+
+.divider-top {
+    border-top: 1px solid $gray-200;
+}
+
+.divider-bottom {
+    border-bottom: 1px solid $gray-200;
+}

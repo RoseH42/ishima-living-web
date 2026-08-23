@@ -1,0 +1,47 @@
+
+// Fonts
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
+
+
+// Bootstrap functions
+
+@import "../../node_modules/bootstrap/scss/functions";
+
+
+// Variables
+
+@import './utils/variables';
+
+
+// Bootstrap
+
+@import "../../node_modules/bootstrap";
+
+
+@import './utils/utilities';
+
+
+// Typography
+
+@import './base/typography';
+
+
+// Base
+
+@import './base/base';
+
+
+// EJS
+
+@import './layout/header';
+@import './layout/footer';
+
+
+// Components
+
+
+// Pages
+
+@import './pages/index';
+@import './pages/property-search';

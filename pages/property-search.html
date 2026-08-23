@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <title>好屋查詢｜ ISHIMA LIVING</title>
+    </head>
+    <body>
+        <%- include('./layout/header'); -%>
+
+        <main>
+            <section class="property-search-hero px-4 px-lg-0 mb-10">
+                <div class="search-hero-bg">
+                    <div class="search-content-bg">
+                        <div class="search-content">
+                            <h2 class="mb-6">好房查詢</h2>
+                            <p class="h5 text-default">上千筆精選房源、專業預約看房服務、即時房貸試算，讓您輕鬆找到理想住宅</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-4 mb-4 d-lg-none">
+                    <h2 class="mb-3">好房查詢</h2>
+                    <p class="h5 text-default">上千筆精選房源、專業預約看房服務、即時房貸試算，讓您輕鬆找到理想住宅</p>                
+                </div>
+
+                <div class="search-bar">
+                    <div class="container">
+                        <div class="row row-cols-lg-5 gy-6">
+
+                            <!-- 地區選單 -->
+                            <div class="col-12">
+                                <div class="d-flex align-items-center justify-content-between flex-lg-column align-items-lg-start">
+                                    <label for="region" class="form-label body-sm pe-4">地區</label>
+                                    <div class="select-wrapper" data-icon="location_on">
+                                        <select class="form-select" id="region" aria-label="region">
+                                            <option selected>請選擇地區</option>
+                                            <option value="台北">台北</option>
+                                            <option value="新北">新北</option>
+                                            <option value="桃園">桃園</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 房型選單 -->
+                            <div class="col-12">
+                                <div class="d-flex align-items-center justify-content-between flex-lg-column align-items-lg-start">
+                                    <label for="houseType" class="form-label body-sm pe-4">房型</label>
+
+                                    <div class="select-wrapper" data-icon="home">
+                                        <select class="form-select" id="houseType" aria-label="houseType">
+                                            <option selected>請選擇房型</option>
+                                            <option value="雅房">雅房</option>
+                                            <option value="套房">套房</option>
+                                            <option value="家庭式">家庭式</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <!-- 房數選單 -->
+                                <div class="d-flex align-items-center justify-content-between flex-lg-column align-items-lg-start">
+                                    <label for="roomAmount" class="form-label body-sm pe-4">房數</label>
+
+                                    <div class="select-wrapper" data-icon="king_bed">
+                                        <select class="form-select" id="roomAmount" aria-label="roomAmount">
+                                            <option selected>請選擇房間數</option>
+                                            <option value="一房">一房</option>
+                                            <option value="兩房">兩房</option>
+                                            <option value="三房">三房</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 價格選單 -->
+                            <div class="col-12">
+                                <div class="d-flex align-items-center justify-content-between flex-lg-column align-items-lg-start">
+                                    <label for="housePrice" class="form-label body-sm pe-4">價格</label>
+
+                                    <div class="select-wrapper" data-icon="attach_money">
+                                        <select class="form-select" id="housePrice" aria-label="housePrice">
+                                            <option selected>請選擇價格區間</option>
+                                            <option value="500 萬以下">500 萬以下</option>
+                                            <option value="500 萬至 1000 萬">500 萬至 1000 萬</option>
+                                            <option value="1000 萬至 1500 萬">1000 萬至 1500 萬</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 搜尋按鈕 -->
+                            <div class="col-12 d-flex align-items-lg-end">
+                                <button type="button" class="btn btn-primary w-100">
+                                    <div class="d-flex gap-2 align-items-center justify-content-center">
+                                        搜尋房源<span class="material-symbols-outlined icon-fs-sm">search</span>
+                                    </div>
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="featured-property py-10">
+                <div class="container">
+                    <div class="mb-12 d-flex flex-column gap-9 gap-lg-0 flex-lg-row justify-content-lg-between">
+                        <div>
+                            <h2 class="mb-3">精選房源</h2>
+                            <p class="h6 text-default">為您精心挑選的優質物件</p>
+                        </div>
+
+                        <div class="category-list mt-auto">
+                            <button type="button" class="btn btn-outline-primary btn-custom-xs active">全部</button>
+                            <button type="button" class="btn btn-outline-primary btn-custom-xs">透天</button>
+                            <button type="button" class="btn btn-outline-primary btn-custom-xs">公寓</button>
+                            <button type="button" class="btn btn-outline-primary btn-custom-xs">別墅</button>
+                        </div>
+                    </div>
+
+                    <ul class="list-unstyled row gy-9 mb-12">
+
+                        <!-- 1 -->
+                        <li class="col">
+                            <div class="card border-0">
+                                <div class="card-img-wrapper">
+                                    <img src="https://github.com/hexschool/2022-web-layout-training/blob/main/2026-week8/search-house1.png?raw=true" class="card-img-top rounded-24" alt="台北市信義區景觀別墅">
+                                    <span class="badge badge-outline-primary rounded-pill property-badge">別墅</span>
+                                </div>
+
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between">
+                                        <h5 class="card-title mb-3">景觀別墅</h5>
+                                        <div class="d-flex align-items-center text-default">
+                                            <span class="material-symbols-outlined icon-fs-xs">location_on</span>
+                                            <span class="body-sm">台北市信義區</span>      
+                                        </div>
+                                    </div>
+
+                                    <p class="card-text text-primary-400 d-flex align-items-center gap-3 mb-6">
+                                        <span class="h5">NT$</span>
+                                        <span class="h3">950</span>
+                                        <span class="h6">萬</span>
+                                    </p>
+
+                                    <div class="d-flex gap-3">
+                                        <span class="badge badge-outline-primary rounded-pill">
+                                            <span class="material-symbols-outlined icon-fs-sm">king_bed</span>                                                        
+                                            <span class="fw-bold btn-fs-md">3</span>
+                                        </span>
+                                        <span class="badge badge-outline-primary rounded-pill">
+                                            <span class="material-symbols-outlined icon-fs-sm">shower</span>                                                        
+                                            <span class="fw-bold btn-fs-md">2</span>
+                                        </span>
+                                            <span class="badge badge-outline-primary rounded-pill">
+                                            <span class="material-symbols-outlined icon-fs-sm">crop_square</span>                                                        
+                                            <span class="fw-bold btn-fs-md">45 坪</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>                            
+                        </li>
+
+                        <li class="col">
+                            <div class="card border-0">
+                                <div class="card-img-wrapper">
+                                    <img src="https://github.com/hexschool/2022-web-layout-training/blob/main/2026-week8/search-house2.png?raw=true" class="card-img-top rounded-24" alt="台北市信義區溫馨透天">
+                                    <span class="badge badge-outline-primary rounded-pill property-badge">透天</span>
+                                </div>
+
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between">
+                                        <h5 class="card-title mb-3">溫馨透天</h5>
+                                        <div class="d-flex align-items-center text-default">
+                                            <span class="material-symbols-outlined icon-fs-xs">location_on</span>
+                                            <span class="body-sm">台北市信義區</span>      
+                                        </div>
+                                    </div>
+
+                                    <p class="card-text text-primary-400 d-flex align-items-center gap-3 mb-6">
+                                        <span class="h5">NT$</span>
+                                        <span class="h3">1,700</span>
+                                        <span class="h6">萬</span>
+                                    </p>
+
+                                    <div class="d-flex gap-3">
+                                        <span class="badge badge-outline-primary rounded-pill">
+                                            <span class="material-symbols-outlined icon-fs-sm">king_bed</span>                                                        
+                                            <span class="fw-bold btn-fs-md">3</span>
+                                        </span>
+                                        <span class="badge badge-outline-primary rounded-pill">
+                                            <span class="material-symbols-outlined icon-fs-sm">shower</span>                                                        
+                                            <span class="fw-bold btn-fs-md">3</span>
+                                        </span>
+                                            <span class="badge badge-outline-primary rounded-pill">
+                                            <span class="material-symbols-outlined icon-fs-sm">crop_square</span>                                                        
+                                            <span class="fw-bold btn-fs-md">60 坪</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>                            
+                        </li>
+
+                        <li class="col">
+                            <div class="card border-0">
+                                <div class="card-img-wrapper">
+                                    <img src="https://github.com/hexschool/2022-web-layout-training/blob/main/2026-week8/search-house3.png?raw=true" class="card-img-top rounded-24" alt="台北市信義區天境御邸">
+                                    <span class="badge badge-outline-primary rounded-pill property-badge">豪宅</span>
+                                </div>
+
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between">
+                                        <h5 class="card-title mb-3">天境御邸</h5>
+                                        <div class="d-flex align-items-center text-default">
+                                            <span class="material-symbols-outlined icon-fs-xs">location_on</span>
+                                            <span class="body-sm">台北市信義區</span>      
+                                        </div>
+                                    </div>
+
+                                    <p class="card-text text-primary-400 d-flex align-items-center gap-3 mb-6">
+                                        <span class="h5">NT$</span>
+                                        <span class="h3">1,500</span>
+                                        <span class="h6">萬</span>
+                                    </p>
+
+                                    <div class="d-flex gap-3">
+                                        <span class="badge badge-outline-primary rounded-pill">
+                                            <span class="material-symbols-outlined icon-fs-sm">king_bed</span>                                                        
+                                            <span class="fw-bold btn-fs-md">3</span>
+                                        </span>
+                                        <span class="badge badge-outline-primary rounded-pill">
+                                            <span class="material-symbols-outlined icon-fs-sm">shower</span>                                                        
+                                            <span class="fw-bold btn-fs-md">2</span>
+                                        </span>
+                                            <span class="badge badge-outline-primary rounded-pill">
+                                            <span class="material-symbols-outlined icon-fs-sm">crop_square</span>                                                        
+                                            <span class="fw-bold btn-fs-md">80 坪</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>                            
+                        </li>
+
+                        <!-- 3 -->
+                        <li class="col">
+                            <div class="card border-0">
+                                <div class="card-img-wrapper">
+                                    <img src="https://github.com/hexschool/2022-web-layout-training/blob/main/2026-week8/search-house4.png?raw=true" class="card-img-top rounded-24" alt="台北市信義區御山景苑">
+                                    <span class="badge badge-outline-primary rounded-pill property-badge">別墅</span>
+                                </div>
+
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between">
+                                        <h5 class="card-title mb-3">御山景苑</h5>
+                                        <div class="d-flex align-items-center text-default">
+                                            <span class="material-symbols-outlined icon-fs-xs">location_on</span>
+                                            <span class="body-sm">台北市信義區</span>      
+                                        </div>
+                                    </div>
+
+                                    <p class="card-text text-primary-400 d-flex align-items-center gap-3 mb-6">
+                                        <span class="h5">NT$</span>
+                                        <span class="h3">1,200</span>
+                                        <span class="h6">萬</span>
+                                    </p>
+
+                                    <div class="d-flex gap-3">
+                                        <span class="badge badge-outline-primary rounded-pill">
+                                            <span class="material-symbols-outlined icon-fs-sm">king_bed</span>                                                        
+                                            <span class="fw-bold btn-fs-md">3</span>
+                                        </span>
+                                        <span class="badge badge-outline-primary rounded-pill">
+                                            <span class="material-symbols-outlined icon-fs-sm">shower</span>                                                        
+                                            <span class="fw-bold btn-fs-md">2</span>
+                                        </span>
+                                            <span class="badge badge-outline-primary rounded-pill">
+                                            <span class="material-symbols-outlined icon-fs-sm">crop_square</span>                                                        
+                                            <span class="fw-bold btn-fs-md">85 坪</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>                            
+                        </li>
+
+                        <li class="col">
+                            <div class="card border-0">
+                                <div class="card-img-wrapper">
+                                    <img src="https://github.com/hexschool/2022-web-layout-training/blob/main/2026-week8/search-house5.png?raw=true" class="card-img-top rounded-24" alt="台北市信義區景觀別墅">
+                                    <span class="badge badge-outline-primary rounded-pill property-badge">別墅</span>
+                                </div>
+
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between">
+                                        <h5 class="card-title mb-3">景觀別墅</h5>
+                                        <div class="d-flex align-items-center text-default">
+                                            <span class="material-symbols-outlined icon-fs-xs">location_on</span>
+                                            <span class="body-sm">台北市信義區</span>      
+                                        </div>
+                                    </div>
+
+                                    <p class="card-text text-primary-400 d-flex align-items-center gap-3 mb-6">
+                                        <span class="h5">NT$</span>
+                                        <span class="h3">1,150</span>
+                                        <span class="h6">萬</span>
+                                    </p>
+
+                                    <div class="d-flex gap-3">
+                                        <span class="badge badge-outline-primary rounded-pill">
+                                            <span class="material-symbols-outlined icon-fs-sm">king_bed</span>                                                        
+                                            <span class="fw-bold btn-fs-md">3</span>
+                                        </span>
+                                        <span class="badge badge-outline-primary rounded-pill">
+                                            <span class="material-symbols-outlined icon-fs-sm">shower</span>                                                        
+                                            <span class="fw-bold btn-fs-md">2</span>
+                                        </span>
+                                            <span class="badge badge-outline-primary rounded-pill">
+                                            <span class="material-symbols-outlined icon-fs-sm">crop_square</span>                                                        
+                                            <span class="fw-bold btn-fs-md">70 坪</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>                            
+                        </li>
+
+                        <li class="col">
+                            <div class="card border-0">
+                                <div class="card-img-wrapper">
+                                    <img src="https://github.com/hexschool/2022-web-layout-training/blob/main/2026-week8/search-house6.png?raw=true" class="card-img-top rounded-24" alt="台北市信義區山嵐御墅">
+                                    <span class="badge badge-outline-primary rounded-pill property-badge">別墅</span>
+                                </div>
+
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between">
+                                        <h5 class="card-title mb-3">山嵐御墅</h5>
+                                        <div class="d-flex align-items-center text-default">
+                                            <span class="material-symbols-outlined icon-fs-xs">location_on</span>
+                                            <span class="body-sm">台北市信義區</span>      
+                                        </div>
+                                    </div>
+
+                                    <p class="card-text text-primary-400 d-flex align-items-center gap-3 mb-6">
+                                        <span class="h5">NT$</span>
+                                        <span class="h3">1,000</span>
+                                        <span class="h6">萬</span>
+                                    </p>
+
+                                    <div class="d-flex gap-3">
+                                        <span class="badge badge-outline-primary rounded-pill">
+                                            <span class="material-symbols-outlined icon-fs-sm">king_bed</span>                                                        
+                                            <span class="fw-bold btn-fs-md">3</span>
+                                        </span>
+                                        <span class="badge badge-outline-primary rounded-pill">
+                                            <span class="material-symbols-outlined icon-fs-sm">shower</span>                                                        
+                                            <span class="fw-bold btn-fs-md">3</span>
+                                        </span>
+                                            <span class="badge badge-outline-primary rounded-pill">
+                                            <span class="material-symbols-outlined icon-fs-sm">crop_square</span>                                                        
+                                            <span class="fw-bold btn-fs-md">90 坪</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>                            
+                        </li>
+
+                        <!-- Desktop -->
+                        <li class="col d-none d-lg-block">
+                            <div class="card border-0">
+                                <div class="card-img-wrapper">
+                                    <img src="https://github.com/hexschool/2022-web-layout-training/blob/main/2026-week8/search-house7.png?raw=true" class="card-img-top rounded-24" alt="台北市信義區巷光宅">
+                                    <span class="badge badge-outline-primary rounded-pill property-badge">透天</span>
+                                </div>
+
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between">
+                                        <h5 class="card-title mb-3">巷光宅</h5>
+                                        <div class="d-flex align-items-center text-default">
+                                            <span class="material-symbols-outlined icon-fs-xs">location_on</span>
+                                            <span class="body-sm">台北市信義區</span>      
+                                        </div>
+                                    </div>
+
+                                    <p class="card-text text-primary-400 d-flex align-items-center gap-3 mb-6">
+                                        <span class="h5">NT$</span>
+                                        <span class="h3">2,000</span>
+                                        <span class="h6">萬</span>
+                                    </p>
+
+                                    <div class="d-flex gap-3">
+                                        <span class="badge badge-outline-primary rounded-pill">
+                                            <span class="material-symbols-outlined icon-fs-sm">king_bed</span>                                                        
+                                            <span class="fw-bold btn-fs-md">3</span>
+                                        </span>
+                                        <span class="badge badge-outline-primary rounded-pill">
+                                            <span class="material-symbols-outlined icon-fs-sm">shower</span>                                                        
+                                            <span class="fw-bold btn-fs-md">3</span>
+                                        </span>
+                                            <span class="badge badge-outline-primary rounded-pill">
+                                            <span class="material-symbols-outlined icon-fs-sm">crop_square</span>                                                        
+                                            <span class="fw-bold btn-fs-md">75 坪</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>                            
+                        </li>
+
+                        <li class="col d-none d-lg-block">
+                            <div class="card border-0">
+                                <div class="card-img-wrapper">
+                                    <img src="https://github.com/hexschool/2022-web-layout-training/blob/main/2026-week8/search-house8.png?raw=true" class="card-img-top rounded-24" alt="台北市信義區觀山大境">
+                                    <span class="badge badge-outline-primary rounded-pill property-badge">豪宅</span>
+                                </div>
+
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between">
+                                        <h5 class="card-title mb-3">觀山大境</h5>
+                                        <div class="d-flex align-items-center text-default">
+                                            <span class="material-symbols-outlined icon-fs-xs">location_on</span>
+                                            <span class="body-sm">台北市信義區</span>      
+                                        </div>
+                                    </div>
+
+                                    <p class="card-text text-primary-400 d-flex align-items-center gap-3 mb-6">
+                                        <span class="h5">NT$</span>
+                                        <span class="h3">2,500</span>
+                                        <span class="h6">萬</span>
+                                    </p>
+
+                                    <div class="d-flex gap-3">
+                                        <span class="badge badge-outline-primary rounded-pill">
+                                            <span class="material-symbols-outlined icon-fs-sm">king_bed</span>                                                        
+                                            <span class="fw-bold btn-fs-md">3</span>
+                                        </span>
+                                        <span class="badge badge-outline-primary rounded-pill">
+                                            <span class="material-symbols-outlined icon-fs-sm">shower</span>                                                        
+                                            <span class="fw-bold btn-fs-md">2</span>
+                                        </span>
+                                            <span class="badge badge-outline-primary rounded-pill">
+                                            <span class="material-symbols-outlined icon-fs-sm">crop_square</span>                                                        
+                                            <span class="fw-bold btn-fs-md">100 坪</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>                            
+                        </li>
+
+                        <li class="col d-none d-lg-block">
+                            <div class="card border-0">
+                                <div class="card-img-wrapper">
+                                    <img src="https://github.com/hexschool/2022-web-layout-training/blob/main/2026-week8/search-house9.png?raw=true" class="card-img-top rounded-24" alt="台北市信義區現代豪華公寓">
+                                    <span class="badge badge-outline-primary rounded-pill property-badge">公寓</span>
+                                </div>
+
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between">
+                                        <h5 class="card-title mb-3">現代豪華公寓</h5>
+                                        <div class="d-flex align-items-center text-default">
+                                            <span class="material-symbols-outlined icon-fs-xs">location_on</span>
+                                            <span class="body-sm">台北市信義區</span>      
+                                        </div>
+                                    </div>
+
+                                    <p class="card-text text-primary-400 d-flex align-items-center gap-3 mb-6">
+                                        <span class="h5">NT$</span>
+                                        <span class="h3">1,500</span>
+                                        <span class="h6">萬</span>
+                                    </p>
+
+                                    <div class="d-flex gap-3">
+                                        <span class="badge badge-outline-primary rounded-pill">
+                                            <span class="material-symbols-outlined icon-fs-sm">king_bed</span>                                                        
+                                            <span class="fw-bold btn-fs-md">3</span>
+                                        </span>
+                                        <span class="badge badge-outline-primary rounded-pill">
+                                            <span class="material-symbols-outlined icon-fs-sm">shower</span>                                                        
+                                            <span class="fw-bold btn-fs-md">2</span>
+                                        </span>
+                                            <span class="badge badge-outline-primary rounded-pill">
+                                            <span class="material-symbols-outlined icon-fs-sm">crop_square</span>                                                        
+                                            <span class="fw-bold btn-fs-md">45 坪</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>                            
+                        </li>
+
+                    </ul>
+
+                    <!-- Pagination -->
+                    <nav aria-label="Page navigation">
+                        <ul class="pagination justify-content-center align-items-center gap-4">
+                            <li class="page-item align-items-center justify-content-center">
+                                <a class="page-link border-0" href="#" aria-label="Previous">
+                                    <span class="material-symbols-outlined fs-4">keyboard_arrow_left</span>
+                                </a>
+                            </li>
+                            <li class="page-item"><a class="page-link active border-0" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link border-0" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link border-0" href="#">3</a></li>
+                            <li class="page-item"><span class="page-text border-0">...</span></li>
+                            <li class="page-item"><a class="page-link border-0" href="#">10</a></li>
+                            <li class="page-item">
+                                <a class="page-link border-0" href="#" aria-label="Next">
+                                    <span class="material-symbols-outlined fs-4">keyboard_arrow_right</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+
+
+                </div>
+
+            </section>
+            
+
+
+
+
+        </main>
+
+        <%- include('./layout/footer'); -%>
+        <script type="module" src="../main.js"></script>
+    </body>
+</html>

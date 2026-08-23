@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>首頁｜ ISHIMA LIVING</title>
+    </head>
+    <body>
+        <%- include('./layout/header'); -%>
+
+        <main>
+            <section class="hero px-4 px-lg-0 mb-10">
+                <div class="hero-bg mb-4">
+                    <div class="hero-content-bg">
+                        <div class="hero-content pt-9 ms-4">
+                            <h1 class="mb-5 mb-lg-6">找到您的夢想家園</h1>
+                            <p class="h5 text-default">上千筆精選房源、專業預約看房服務、即時房貸試算，讓您輕鬆找到理想住宅</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="search-bar">
+                    <div class="container">
+                        <div class="row row-cols-lg-5 gy-6">
+
+                            <!-- 地區選單 -->
+                            <div class="col-12">
+                                <div class="d-flex align-items-center justify-content-between flex-lg-column align-items-lg-start">
+                                    <label for="region" class="form-label body-sm pe-4">地區</label>
+                                    <div class="select-wrapper" data-icon="location_on">
+                                        <select class="form-select" id="region" aria-label="region">
+                                            <option selected>請選擇地區</option>
+                                            <option value="台北">台北</option>
+                                            <option value="新北">新北</option>
+                                            <option value="桃園">桃園</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 房型選單 -->
+                            <div class="col-12">
+                                <div class="d-flex align-items-center justify-content-between flex-lg-column align-items-lg-start">
+                                    <label for="houseType" class="form-label body-sm pe-4">房型</label>
+
+                                    <div class="select-wrapper" data-icon="home">
+                                        <select class="form-select" id="houseType" aria-label="houseType">
+                                            <option selected>請選擇房型</option>
+                                            <option value="雅房">雅房</option>
+                                            <option value="套房">套房</option>
+                                            <option value="家庭式">家庭式</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <!-- 房數選單 -->
+                                <div class="d-flex align-items-center justify-content-between flex-lg-column align-items-lg-start">
+                                    <label for="roomAmount" class="form-label body-sm pe-4">房數</label>
+
+                                    <div class="select-wrapper" data-icon="king_bed">
+                                        <select class="form-select" id="roomAmount" aria-label="roomAmount">
+                                            <option selected>請選擇房間數</option>
+                                            <option value="一房">一房</option>
+                                            <option value="兩房">兩房</option>
+                                            <option value="三房">三房</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 價格選單 -->
+                            <div class="col-12">
+                                <div class="d-flex align-items-center justify-content-between flex-lg-column align-items-lg-start">
+                                    <label for="housePrice" class="form-label body-sm pe-4">價格</label>
+
+                                    <div class="select-wrapper" data-icon="attach_money">
+                                        <select class="form-select" id="housePrice" aria-label="housePrice">
+                                            <option selected>請選擇價格區間</option>
+                                            <option value="500 萬以下">500 萬以下</option>
+                                            <option value="500 萬至 1000 萬">500 萬至 1000 萬</option>
+                                            <option value="1000 萬至 1500 萬">1000 萬至 1500 萬</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 搜尋按鈕 -->
+                            <div class="col-12 d-flex align-items-lg-end">
+                                <button type="button" class="btn btn-primary w-100">
+                                    <div class="d-flex gap-2 align-items-center justify-content-center">
+                                        搜尋房源<span class="material-symbols-outlined icon-fs-sm">search</span>
+                                    </div>
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="why-us py-10 py-lg-17">
+                <div class="container">
+                    <div class="mb-9 mb-lg-16">
+                        <h2 class="mb-lg-4">為什麼選擇我們</h2>
+                        <p class="text-default">專業服務，值得信賴</p>                    
+                    </div>
+                    <ul class="list-unstyled row row-cols-1 row-cols-lg-4 g-4">
+
+                        <!-- 精選物件 -->
+                        <li class="col featured-property-bg">
+                            <div class="d-flex flex-column align-items-center justify-content-center gap-4 p-8">
+                                <div class="icon icon-xl rounded-circle bg-gray-100">
+                                    <span class="material-symbols-outlined text-secondary icon-fs-lg">kid_star</span>
+                                </div>
+                                <h4 class="text-white">精選物件</h4>
+                                <p class="reason-text text-white text-center px-4">
+                                    嚴格篩選每一筆房源，確保品質與合法性，讓您安心選購
+                                </p>
+                            </div>
+                        </li>
+
+                        <!-- 專業團隊 -->
+                        <li class="col expert-agents-bg">
+                            <div class="d-flex flex-column align-items-center justify-content-center gap-4 p-8">
+                                <div class="icon icon-xl rounded-circle bg-gray-100">
+                                    <span class="material-symbols-outlined text-secondary icon-fs-lg">group</span>
+                                </div>
+                                <h4 class="text-white">專業團隊</h4>
+                                <p class="reason-text text-white text-center px-4">
+                                    經驗豐富的顧問團隊，提供從看房到成交的全程專業服務
+                                </p>
+                            </div>
+                        </li>
+
+                        <!-- 市場洞察 -->
+                        <li class="col market-insights-bg">
+                            <div class="d-flex flex-column align-items-center justify-content-center gap-4 p-8">
+                                <div class="icon icon-xl rounded-circle bg-gray-100">
+                                    <span class="material-symbols-outlined text-secondary icon-fs-lg">trending_up</span>
+                                </div>
+                                <h4 class="text-white">市場洞察</h4>
+                                <p class="reason-text text-white text-center px-4">
+                                    即時掌握市場動態，提供最新的房價趨勢與投資分析
+                                </p>
+                            </div>
+                        </li>
+
+                        <!-- 交易保障 -->
+                        <li class="col transaction-protection-bg">
+                            <div class="d-flex flex-column align-items-center justify-content-center gap-4 p-8">
+                                <div class="icon icon-xl rounded-circle bg-gray-100">
+                                    <span class="material-symbols-outlined text-secondary icon-fs-lg">shield</span>
+                                </div>
+                                <h4 class="text-white">交易保障</h4>
+                                <p class="reason-text text-white text-center px-4">
+                                    完整的法律支援與履約保證，保障您的購屋權益
+                                </p>
+                            </div>
+                        </li>
+                    </ul>    
+                </div>
+            </section>
+
+            <section class="featured-property py-10">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-lg-4">
+                            <div class="card text-white property-image p-6 mb-4">
+                                <h2 class="card-title mb-3">精選房源</h2>
+                                <p class="card-text h6 mb-5">為您精心挑選的優質物件</p>
+                                <button type="button" class="btn btn-gray-100 search-btn">
+                                    <div class="d-flex gap-2 align-items-center justify-content-center text-primary-400">
+                                       查看更多房源<span class="material-symbols-outlined icon-fs-sm">arrow_forward</span>
+                                    </div>   
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-lg-8">
+                            <div class="swiper property-swiper">
+                            <!-- Additional required wrapper -->
+                                <div class="swiper-wrapper">
+
+                                    <!-- First slides -->
+                                    <div class="swiper-slide">
+                                        <div class="card border-0">
+                                            <div class="card-img-wrapper">
+                                                <img src="https://github.com/hexschool/2022-web-layout-training/blob/main/2026-week8/index-img_house1.png?raw=true" class="card-img-top rounded-24" alt="台北市信義區景觀別墅">
+                                                <span class="badge badge-outline-primary rounded-pill property-badge">別墅</span>
+                                            </div>
+
+                                            <div class="card-body">
+                                                <div class="d-flex justify-content-between">
+                                                    <h5 class="card-title mb-3">景觀別墅</h5>
+                                                    <div class="d-flex align-items-center text-default">
+                                                        <span class="material-symbols-outlined icon-fs-xs">location_on</span>
+                                                        <span class="body-sm">台北市信義區</span>      
+                                                    </div>
+                                                </div>
+
+                                                <p class="card-text text-primary-400 d-flex align-items-center gap-3 mb-6">
+                                                    <span class="h5">NT$</span>
+                                                    <span class="h3">1,500</span>
+                                                    <span class="h6">萬</span>
+                                                </p>
+
+                                                <div class="d-flex gap-3">
+                                                    <span class="badge badge-outline-primary rounded-pill">
+                                                        <span class="material-symbols-outlined icon-fs-sm">king_bed</span>                                                        
+                                                        <span class="fw-bold btn-fs-md">3</span>
+                                                    </span>
+                                                    <span class="badge badge-outline-primary rounded-pill">
+                                                        <span class="material-symbols-outlined icon-fs-sm">shower</span>                                                        
+                                                        <span class="fw-bold btn-fs-md">2</span>
+                                                    </span>
+                                                     <span class="badge badge-outline-primary rounded-pill">
+                                                        <span class="material-symbols-outlined icon-fs-sm">crop_square</span>                                                        
+                                                        <span class="fw-bold btn-fs-md">45 坪</span>
+                                                    </span>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="swiper-slide">
+                                        <div class="card border-0">
+                                            <div class="card-img-wrapper">
+                                                <img src="https://github.com/hexschool/2022-web-layout-training/blob/main/2026-week8/index-img_house2.png?raw=true" class="card-img-top rounded-24" alt="台北市信義區現代豪華大廈">
+                                                <span class="badge badge-outline-primary rounded-pill property-badge">豪宅</span>
+                                            </div>
+
+                                            <div class="card-body">
+                                                <div class="d-flex justify-content-between">
+                                                    <h5 class="card-title mb-3">現代豪華大樓</h5>
+                                                    <div class="d-flex align-items-center text-default">
+                                                        <span class="material-symbols-outlined icon-fs-xs">location_on</span>
+                                                        <span class="body-sm">台北市信義區</span>      
+                                                    </div>
+                                                </div>
+
+                                                <p class="card-text text-primary-400 d-flex align-items-center gap-3 mb-6">
+                                                    <span class="h5">NT$</span>
+                                                    <span class="h3">1,200</span>
+                                                    <span class="h6">萬</span>
+                                                </p>
+
+                                                <div class="d-flex gap-3">
+                                                    <span class="badge badge-outline-primary rounded-pill">
+                                                        <span class="material-symbols-outlined icon-fs-sm">king_bed</span>                                                        
+                                                        <span class="fw-bold btn-fs-md">3</span>
+                                                    </span>
+                                                    <span class="badge badge-outline-primary rounded-pill">
+                                                        <span class="material-symbols-outlined icon-fs-sm">shower</span>                                                        
+                                                        <span class="fw-bold btn-fs-md">2</span>
+                                                    </span>
+                                                     <span class="badge badge-outline-primary rounded-pill">
+                                                        <span class="material-symbols-outlined icon-fs-sm">crop_square</span>                                                        
+                                                        <span class="fw-bold btn-fs-md">120 坪</span>
+                                                    </span>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>                                    
+                                
+                                    <div class="swiper-slide">
+                                        <div class="card border-0">
+                                            <div class="card-img-wrapper">
+                                                <img src="https://github.com/hexschool/2022-web-layout-training/blob/main/2026-week8/index-img_house3.png?raw=true" class="card-img-top rounded-24" alt="台北市信義區溫馨透天">
+                                                <span class="badge badge-outline-primary rounded-pill property-badge">透天</span>
+                                            </div>
+
+                                            <div class="card-body">
+                                                <div class="d-flex justify-content-between">
+                                                    <h5 class="card-title mb-3">溫馨透天</h5>
+                                                    <div class="d-flex align-items-center text-default">
+                                                        <span class="material-symbols-outlined icon-fs-xs">location_on</span>
+                                                        <span class="body-sm">台北市信義區</span>      
+                                                    </div>
+                                                </div>
+
+                                                <p class="card-text text-primary-400 d-flex align-items-center gap-3 mb-6">
+                                                    <span class="h5">NT$</span>
+                                                    <span class="h3">2,000</span>
+                                                    <span class="h6">萬</span>
+                                                </p>
+
+                                                <div class="d-flex gap-3">
+                                                    <span class="badge badge-outline-primary rounded-pill">
+                                                        <span class="material-symbols-outlined icon-fs-sm">king_bed</span>                                                        
+                                                        <span class="fw-bold btn-fs-md">3</span>
+                                                    </span>
+                                                    <span class="badge badge-outline-primary rounded-pill">
+                                                        <span class="material-symbols-outlined icon-fs-sm">shower</span>                                                        
+                                                        <span class="fw-bold btn-fs-md">3</span>
+                                                    </span>
+                                                     <span class="badge badge-outline-primary rounded-pill">
+                                                        <span class="material-symbols-outlined icon-fs-sm">crop_square</span>                                                        
+                                                        <span class="fw-bold btn-fs-md">60 坪</span>
+                                                    </span>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>                                    
+                                
+                
+                                </div>
+
+                                <div class="swiper-controls">
+                                    <!-- Pagination -->
+                                    <div class="swiper-pagination"></div>
+
+                                    <!-- Navigation buttons -->
+                                    <div class="swiper-button-prev"></div>
+                                    <div class="swiper-button-next"></div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="mortgage-calculator py-10 py-lg-17">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-lg-6">
+                            <div class="blob mb-9 mb-lg-0">
+                              <img src="../assets/images/mortgage-calculator-image.jpg" alt="室內實景">
+                            </div>
+
+                            <svg width="0" height="0" aria-hidden="true">
+                                <defs>
+                                    <clipPath id="blob-shape">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M190.587 287.086C258.963 290.048 323.473 243.825 340.499 177.644C355.246 120.323 302.001 76.5892 253.493 42.5722C208.347 10.9132 151.87 -17.878 106.622 13.6342C59.5185 46.4381 59.162 111.367 75.9947 166.187C94.0025 224.833 129.204 284.427 190.587 287.086Z" fill="url(#pattern0_4556_3631)"/>
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M43.6057 283.645C26.4282 280.129 7.48324 275.771 3.01924 258.88C-3.11208 235.68 -1.12793 206.728 20.4921 196.188C41.6732 185.861 62.6459 204.964 79.1648 221.757C95.1663 238.025 113.454 259.415 102.108 279.161C91.3728 297.846 64.7927 287.982 43.6057 283.645Z" fill="url(#pattern1_4556_3631)"/>
+                                    </clipPath>
+                                </defs>
+                            </svg>
+
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            <div class="mb-8">
+                                <h2 class="mb-3">房貸試算工具</h2>
+                                <p class="h6 text-default">輕鬆計算您的月付金額，提前規劃購屋預算，讓買房更有信心</p>
+                            </div>
+
+                            <div class="d-flex flex-column gap-4 mb-9">
+                                <div class="d-flex gap-3">
+                                    <div class="icon icon-xl text-white bg-secondary rounded-circle">
+                                        <span class="material-symbols-outlined icon-fs-lg">paid</span>
+                                    </div>
+                                    <div>
+                                        <h6>多元試算方案</h6>
+                                        <p class="text-default">
+                                            本息攤還、寬限期等多種還款方式比較
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex gap-3">
+                                    <div class="icon icon-xl text-white bg-secondary rounded-circle">
+                                        <span class="material-symbols-outlined icon-fs-lg">trending_up</span>
+                                    </div>
+                                    <div>
+                                        <h6>即時利率資訊</h6>
+                                        <p class="text-default">
+                                            整合各大銀行最新貸款利率
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex gap-3">
+                                    <div class="icon icon-xl text-white bg-secondary rounded-circle">
+                                        <span class="material-symbols-outlined icon-fs-lg">calendar_check</span>
+                                    </div>
+                                    <div>
+                                        <h6>詳細還款計畫</h6>
+                                        <p class="text-default">
+                                            完整時間表，掌握每期本金與利息
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="px-4">
+                                <button type="button" class="btn btn-primary w-100">
+                                    <div class="d-flex gap-2 align-items-center justify-content-center">
+                                        立即試算<span class="material-symbols-outlined icon-fs-sm">arrow_forward</span>
+                                    </div>
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="ready-to-find-ideal-home py-10">
+                <div class="container">
+                    <div class="row flex-lg-row-reverse">
+                        <div class="col-12 col-lg-6">
+                            <div class="blob mb-9 mb-lg-0">
+                                <img src="../assets/images/ready-to-find-ideal-home-image.jpg" alt="室內實景">
+                            </div>
+
+                            <svg width="0" height="0" aria-hidden="true">
+                                <defs>
+                                    <clipPath id="blob-shape-home">
+                                        <path d="M58.9002 246.28C-3.44113 200.424 -16.1759 111.717 20.1297 45.3374C50.2981 -9.82073 126.373 -1.97029 191.049 4.66574C252.618 10.983 327.106 20.1918 341.029 78.2627C354.987 136.486 292.056 175.373 239.482 206.682C181.546 241.186 113.387 286.357 58.9002 246.28Z"/>
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                        </div>
+                
+                        <div class="col-12 col-lg-6">
+                            <div class="d-flex flex-column py-lg-19">
+                                <div class="mb-9">
+                                    <h2 class="mb-3">
+                                        準備好找到您的
+                                        <br>
+                                        理想住宅了嗎？
+                                    </h2>
+                                    <p class="text-default">
+                                        加入我們，開始您的購屋之旅，
+                                        <br>
+                                        讓專業團隊協助您實現安居夢想
+                                    </p>
+                                </div>
+                                <div class="col-lg-8 d-flex gap-3">
+                                    <button type="button" class="btn badge-outline-primary btn-custom-sm w-100">
+                                        <div class="d-flex gap-2 align-items-center justify-content-center">
+                                            房貸試算<span class="material-symbols-outlined icon-fs-sm">paid</span>
+                                        </div>
+                                    </button>
+
+                                    <button type="button" class="btn btn-primary btn-custom btn-custom-sm w-100">
+                                        <div class="d-flex gap-2 align-items-center justify-content-center">
+                                            開始搜尋房源<span class="material-symbols-outlined icon-fs-sm">arrow_forward</span>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+            </section>
+            
+        </main>
+
+
+        <%- include('./layout/footer'); -%>
+
+        <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+        <script type="module" src="../main.js"></script>
+    </body>
+</html>

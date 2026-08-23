@@ -1,0 +1,119 @@
+
+h1, .h1 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0;
+
+    @include media-breakpoint-up(lg) {
+        font-size: 60px;
+    }
+}
+
+h2, .h2 {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0;
+
+    @include media-breakpoint-up(lg) {
+        font-size: 48px;
+    }
+}
+
+h3, .h3 {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0;
+
+    @include media-breakpoint-up(lg) {
+        font-size: 40px;
+    }
+}
+
+h4, .h4 {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0;
+
+    @include media-breakpoint-up(lg) {
+        font-size: 32px;
+    }
+}
+
+h5, .h5 {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.6;
+    letter-spacing: 0;
+
+    @include media-breakpoint-up(lg) {
+        font-size: 24px;
+    }
+}
+
+h6, .h6 {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.6;
+    letter-spacing: 0;
+
+    @include media-breakpoint-up(lg) {
+        font-size: 20px;
+    }
+}
+
+.body-sm {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.body-xs {
+    font-size: 12px;
+    line-height: 1.2;
+}
+
+.btn-fs-lg {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.2;
+
+    @include media-breakpoint-up(lg) {
+        font-size: 20px;
+    }
+}
+
+.btn-fs-md {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.btn-fs-sm {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+
+.icon-fs-xs {
+    font-size: 14px;
+}
+
+.icon-fs-sm {
+    font-size: 24px;
+}
+
+.icon-fs-md {
+    font-size: 30px;
+}
+
+.icon-fs-lg {
+    font-size: 32px;
+}
+
+.icon-fs-xl {
+    font-size: 50px;
+}

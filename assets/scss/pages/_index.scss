@@ -1,0 +1,344 @@
+
+main {
+    overflow-x: clip;
+}
+
+.hero {
+    @include media-breakpoint-up (lg) {
+        position: relative;
+    }       
+
+    .hero-bg {
+        min-height: 100vh;
+        background-image: url(https://github.com/hexschool/2022-web-layout-training/blob/main/2026-week8/index-m_Hero%20Image.png?raw=true);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+
+        border-radius: 24px;
+
+        @include media-breakpoint-up (lg) {
+            background-image: url(https://github.com/hexschool/2022-web-layout-training/blob/main/2026-week8/index-hero-Image.png?raw=true);
+            border-radius: 40px;
+        }
+    }
+
+    .hero-content-bg {
+        background-image: url(https://github.com/hexschool/2022-web-layout-training/blob/main/2026-week8/bg.png?raw=true);
+        background-repeat: no-repeat;
+        background-size: 820px 734px;
+        background-position: center bottom;
+        padding-bottom: 45px;
+        
+        .hero-content {
+            max-width: 320px;
+
+            @include media-breakpoint-up (lg) {
+                max-width: 480px;
+            }
+        }
+
+        @include media-breakpoint-up (lg) {
+            background-size: 954px 766px;
+            background-position: -104px bottom;
+            padding-top: 108px;
+            padding-bottom: 168px;
+        }
+    }
+}
+
+.search-bar {
+    background-color: $gray-100;
+    backdrop-filter: blur(20px);
+    padding: $spacing-16;
+    border-radius: 20px;
+
+    @include media-breakpoint-up (lg) {
+        max-width: 1238px;
+        position: absolute;
+        left: 0;
+        bottom: 0px;
+        padding-block: $spacing-24;
+        padding-right: $spacing-40;
+        border-radius: 0;
+        border-top-right-radius: 40px;
+    }
+    
+    .select-wrapper {
+        width: 80%;
+        position: relative;
+
+        @include media-breakpoint-up (lg) {
+            width: 100%;
+        }
+    
+        .form-select {
+            color: $light;
+            padding-left: $spacing-40;
+            padding-right: $spacing-48;
+            background-image: none;     // 把 Bootstrap 原本的箭頭拿掉
+        }
+    
+    // 加上選項符號
+    &::before {
+        content: attr(data-icon);   // 變換 icon
+        font-family: "Material Symbols Outlined";
+        font-size: 24px;
+        font-weight: 200;
+        position: absolute;
+        left: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    // 更改箭頭符號
+    &::after {
+        content: "arrow_drop_down";
+        font-family: "Material Symbols Outlined";
+        font-size: 24px;
+        color: $primary-400;
+        position: absolute;
+        top: 50%;
+        right: 18px;
+        transform: translateY(-50%);
+        pointer-events: none;            
+        }
+    }
+}
+
+.why-us {
+    background-color: $gray-100;
+    background-image: url(https://github.com/hexschool/2022-web-layout-training/blob/main/2026-week8/display1.png?raw=true);
+    background-repeat: no-repeat;
+    background-size: 176px 138px;
+    background-position: -36px 20px;
+
+    @include media-breakpoint-up (lg) {
+        min-height: 100vh;
+
+        // 標題橘色石頭
+        background-image:
+            url(https://github.com/hexschool/2022-web-layout-training/blob/main/2026-week8/display1.png?raw=true);
+            // url(https://github.com/hexschool/2022-web-layout-training/blob/main/2026-week8/bg_stone_bottom.png?raw=true);
+        background-size: 280px 220px;
+        background-position: 154px 70px;
+
+        position: relative;
+        overflow: hidden;
+
+        .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        // 右邊白色石頭
+        &::before {
+            content: "";
+            position: absolute;
+            width: 585px;
+            height: 450px;
+
+            background-image: url(https://github.com/hexschool/2022-web-layout-training/blob/main/2026-week8/bg_stone.png?raw=true);
+            background-repeat: no-repeat;
+            background-size: contain;
+            transform: rotate(180deg);
+            top: 120px;
+            right: -228px;
+            pointer-events: none;
+            z-index: 0;
+        }
+    }
+
+    .reason-text {
+        max-width: 279px;
+    }
+
+    .featured-property-bg {
+        min-height: 343px;
+        background-image: url(https://github.com/hexschool/2022-web-layout-training/blob/main/2026-week8/display2.png?raw=true);
+        background-repeat: no-repeat;
+        background-size: 343px 343px;
+        background-position: center;
+        padding: 51px 0px;
+        margin-bottom: -48px;
+
+        @include media-breakpoint-up (lg) {
+            min-height: 320px;
+            background-size: 320px 320px;
+            background-position: top;
+            padding: 35px 0px;
+            margin-bottom: 0;
+        }
+    }
+
+    .expert-agents-bg {
+        min-height: 343px;
+        background-image: url(https://github.com/hexschool/2022-web-layout-training/blob/main/2026-week8/display3.png?raw=true);
+        background-repeat: no-repeat;
+        background-size: 343px 338px;
+        background-position: center;
+        padding: 48px 0px;
+        margin-bottom: -48px;
+
+        @include media-breakpoint-up (lg) {
+            min-height: 320px;
+            background-size: 320px 320px;
+            background-position: top;
+            padding: 35px 7px;
+            margin-bottom: 0;
+        }
+    }
+
+    .market-insights-bg {
+        min-height: 343px;
+        background-image: url(https://github.com/hexschool/2022-web-layout-training/blob/main/2026-week8/display4.png?raw=true);
+        background-repeat: no-repeat;
+        background-size: 343px 300px;
+        background-position: top;
+        padding: 32px 0px 27px 0px;    
+        margin-bottom: -60px;
+
+        @include media-breakpoint-up (lg) {
+            min-height: 320px;
+            background-size: 320px 280px;
+            background-position: top;
+            padding: 18px 7px 12px 7px;
+            margin-bottom: 0;
+        }
+    }
+
+    .transaction-protection-bg {
+        min-height: 343px;
+        background-image: url(https://github.com/hexschool/2022-web-layout-training/blob/main/2026-week8/display5.png?raw=true);
+        background-repeat: no-repeat;
+        background-size: 343px 290px;
+        background-position: top;
+        padding: 24px 0px 25px 0px;    
+
+        @include media-breakpoint-up (lg) {
+            min-height: 320px;
+            background-size: 320px 290px;
+            background-position: top;
+            padding: 20px 7px;
+            margin-bottom: 0;
+        }
+    }
+}
+
+.featured-property {
+    .property-image {
+        max-height: 207px;
+        border: 0;
+        border-radius: 24px;
+        background-image:
+        	linear-gradient(
+				to bottom,
+				rgba(35, 46, 26, 0.2),
+				rgba(35, 46, 26, 0.7)
+			),
+            url(https://github.com/hexschool/2022-web-layout-training/blob/main/2026-week8/index-img_house.png?raw=true);
+   		
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        @include media-breakpoint-up (lg) {
+            min-height: 600px;
+            margin-left: -200px;
+        }
+    }
+
+    .search-btn {
+        width: 75%;
+
+        @include media-breakpoint-up (lg) {
+            width: 50%;
+        }
+    }
+
+    .card-img-wrapper {
+        position: relative;
+    }
+
+    .property-badge {
+        position: absolute;
+        right: 16px;
+        bottom: 16px;
+    }
+
+    // Swiper
+    .property-swiper {
+        padding-bottom: 40px;
+
+        @include media-breakpoint-up (lg) {
+            height: 600px;
+        }    
+
+        .swiper-pagination-bullet {
+            width: 60px;
+            height: 4px;
+            background-color: $secondary;
+            border-radius: 0px;
+        }
+
+        .swiper-button-prev,
+        .swiper-button-next {
+            color: $white;
+            // background-color: $primary-400;
+        }
+    }    
+}
+
+.property-swiper {
+
+    .swiper-pagination-bullet {
+        width: 60px;
+        height: 4px;
+        background-color: $secondary;
+        border-radius: 0px;
+    }
+
+    @include media-breakpoint-up (lg) {
+        height: 600px;
+    }
+}
+
+.mortgage-calculator {
+    .blob {
+        width: 343px;    /* 對齊 SVG 的 width */
+        height: 290px;   /* 對齊 SVG 的 height */
+        clip-path: url(#blob-shape);
+
+            @include media-breakpoint-up(lg) {
+                transform: translate(0px, 80px) scale(1.8);
+                transform-origin: center;
+            }
+        }
+}
+
+.ready-to-find-ideal-home {    
+    overflow: visible;
+
+    .blob {
+        width: 343px;    /* 對齊 SVG 的 width */
+        height: 262px;   /* 對齊 SVG 的 height */
+        clip-path: url(#blob-shape-home);
+
+            @include media-breakpoint-up(lg) {
+                transform: translate(330px, 280px) scale(3);
+                transform-origin: center;
+            }
+    }
+    .blob img {
+        width: 100%;
+        height: 100%;
+    }    
+}
+
+
+
+
+
+
+

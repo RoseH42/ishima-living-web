@@ -1,0 +1,81 @@
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="https://github.com/hexschool/2022-web-layout-training/blob/main/2026-week8/logo.png?raw=true" alt="ishima-logo">
+            </a>
+
+            <!-- Desktop -->
+            <div class="nav-bg d-none d-lg-flex gap-9 align-items-lg-center">
+                <ul class="navbar-nav d-lg-flex gap-8 align-items-lg-center">
+                    <li class="nav-item">
+                        <a class="nav-link btn-fs-md p-0" href="#">好房查詢</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn-fs-md p-0" href="">房貸試算</a>
+                    </li>
+                </ul>
+                <button type="button" class="btn btn-custom btn-secondary text-white">
+                    登入 / 註冊
+                </button>
+            </div>
+
+            <!-- Mobile -->
+            <div class="navbar-actions d-flex align-items-center gap-1 d-lg-none">
+                <div class="icon icon-md account-wrapper p-2">
+                    <span class="material-symbols-outlined filled icon-fs-sm text-primary">account_circle</span>
+                </div>
+
+                <button class="navbar-toggler collapsed bg-primary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="material-symbols-outlined menu-icon text-white">menu</span>
+                    
+                    <span class="material-symbols-outlined close-icon text-white">close</span>
+                </button>  
+            </div>
+
+            <!-- Mobile collapse content-->
+            <div class="collapse navbar-collapse d-lg-none" id="navbarNavAltMarkup">
+                <div class="container-fluid">
+                    <div class="collapse-content pt-8 pb-4 divider-top d-lg-none">
+                        <div class="d-flex flex-column align-items-center justify-content-center gap-2 divider-bottom mb-5">
+                            <div class="icon icon-lg">
+                                <span class="material-symbols-outlined filled icon-fs-xl text-secondary">account_circle</span>
+                            </div>
+                            <div class="d-flex flex-column mb-8">
+                                <span class="text-dark mb-1">
+                                    訪客
+                                </span>
+                                <span class="body-sm text-gray-100">
+                                    
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-center py-4 px-9 mb-10">
+                            <a class="w-50" href="#">
+                                <div class="d-flex flex-column align-items-center">
+                                    <div class="icon icon-md">
+                                        <span class="material-symbols-outlined icon-fs-md mb-3">search</span>
+                                    </div>
+                                    <span class="btn-fs-md">好房查詢</span>
+                                </div>
+                            </a>
+
+                            <a class="w-50" href="#">
+                                <div class="d-flex flex-column align-items-center">
+                                    <div class="icon icon-md">
+                                        <span class="material-symbols-outlined icon-fs-md mb-3">paid</span>
+                                    </div>
+                                    <span class="btn-fs-md">房貸試算</span>
+                                </div>
+                            </a>
+                        </div>
+                        <button type="button" class="btn btn-primary w-100 rounded-3">
+                            登入 / 註冊
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </nav>

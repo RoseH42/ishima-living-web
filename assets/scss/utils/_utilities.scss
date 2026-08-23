@@ -1,0 +1,79 @@
+
+// Button
+
+.btn-custom {
+    border-radius: 8px;
+    padding: $spacing-12 $spacing-24;
+}
+
+.btn-custom-xs {
+    border-radius: 1000px;
+    padding: $spacing-8 $spacing-40;
+}
+
+.btn-custom-sm {
+    border-radius: 8px;
+    padding: $spacing-12 $spacing-16;
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-md {
+    width: 40px;
+    height: 40px;
+}
+
+.icon-lg {
+    width: 60px;
+    height: 60px;
+}
+
+.icon-xl {
+    width: 60px;
+    height: 60px;
+}
+
+.rounded-24 {
+    border-radius: 24px;
+}
+
+.badge {
+    padding: 8px 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: $spacing-8;
+}
+
+.badge-outline-primary {
+    color: $primary-400;
+    background-color: $gray-100;
+    border: 1px solid $primary-200;
+}
+
+
+// 啟用響應式
+
+$utilities: map-merge(
+  $utilities,
+  (
+    "font-size":
+      map-merge(
+        map-get($utilities, "font-size"),
+        (
+          responsive: true,
+        )
+      ),
+
+    "position": map-merge(
+      map-get($utilities, "position"),
+      (
+        responsive: true
+      )
+    ),
+  )
+);
