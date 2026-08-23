@@ -7,34 +7,60 @@
     background-size: contain;
     background-position: bottom;
 
+    .footer-mb {
+        .instagram-btn {
+            font-size: 18px;
+            background-color: $white;
+        }
+
+        .bi-facebook {
+            color: $white;
+            font-size: 38px;
+        }
+    }
+
+    a:hover {
+        color: $primary-300;
+
+        & .instagram-btn {
+            color: $primary-400;
+            background-color: $primary-300;
+        }
+
+        & .bi-facebook {
+            color: $primary-300;
+        }
+    }
+
     @include media-breakpoint-up(lg) {
         min-height: 330px;
         background-image: url(https://github.com/hexschool/2022-web-layout-training/blob/main/2026-week8/bg_footer.png?raw=true);
         background-position: left bottom;
-    }
 
+        .footer-lg {
+            .instagram-btn {
+                color: $white;
+                font-size: 18px;
+                background-color: $primary-400;
+            }
 
-    .footer-mb {
-        .bi-instagram {
-            font-size: 18px;
-        }
+            .bi-facebook {
+                color: $primary-400;
+                font-size: 38px;
+            }
+        }        
 
-        .bi-facebook {
-            color: $white;
-            font-size: 38px;
-        }
-    }
-
-    .footer-lg {
-        .bi-instagram {
-            color: $white;
-            font-size: 18px;
-        }
-
-        .bi-facebook {
+        a:hover {
             color: $primary-400;
-            font-size: 38px;
+
+            & .instagram-btn {
+                color: $white;
+                background-color: $primary-300;
+            }
+
+            & .bi-facebook {
+                color: $primary-300;
+            }
         }
     }
-
 }
