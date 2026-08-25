@@ -24,6 +24,7 @@ const swiper = new Swiper('.swiper', {
     pagination: {
         el: '.swiper-pagination',
         clickable: true,
+        type: 'progressbar',
     },
 
     navigation: {
@@ -33,7 +34,7 @@ const swiper = new Swiper('.swiper', {
 
     breakpoints: {
         992: {
-            slidesPerView: 2,
+            slidesPerView: 2.8,
             spaceBetween: 24,
         },
     },
