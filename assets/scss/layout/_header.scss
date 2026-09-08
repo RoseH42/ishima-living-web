@@ -1,13 +1,55 @@
 
+html {
+    scroll-timeline-name: --page-scroll;
+    scroll-timeline-axis: block;    
+}
+
 .navbar {
+    padding: 8px 16px;
     position: relative;
     z-index: 1001;
 
+    a {
+        display: block;
+    }
+
     @include media-breakpoint-up (lg) {
-        position: absolute;
-        top: 0;
-        left: 0;
+        // margin-top: 56px;
+        padding: 16px 80px;
+        position: fixed;
+        top: 56px;
         width: 100%;
+        background-color: transparent;
+
+        animation:
+            navbar-position-change linear both,
+            navbar-background-change linear both;
+        animation-timeline:
+            --page-scroll,
+            --page-scroll;
+        animation-range:
+            30px 150px,
+            90px 150px;
+    }
+
+    @keyframes navbar-position-change {
+        from {
+            transform: translateY(0);
+        }
+
+        to {
+            transform: translateY(-56px);
+        }
+    }
+
+    @keyframes navbar-background-change {
+        from {
+            background-color: transparent;
+        }
+
+        to {
+            background-color: $gray-100;
+        }
     }
 
     .navbar-brand img {
@@ -42,23 +84,23 @@
         right: 0;
         bottom: 0;
         background-color: rgba(0, 0, 0, 0.5);
-
+        
         opacity: 0;
         visibility: hidden;
         pointer-events: none;
 
-        z-index: 0;
+        z-index: -1;
 
         @include media-breakpoint-up(lg) {
             content: none;
         }
     }
 
-        &:has(.navbar-toggler:not(.collapsed))::after {
-            opacity: 1;
-            visibility: visible;
-            pointer-events: auto;
-        }
+    &:has(.navbar-toggler:not(.collapsed))::after {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
 }
 
 .navbar-toggler {

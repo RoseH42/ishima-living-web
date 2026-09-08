@@ -1,42 +1,4 @@
 
-// Button
-
-.btn-custom {
-    border-radius: 8px;
-    padding: $spacing-12 $spacing-24;
-}
-
-.btn-custom-xs {
-    border-radius: 1000px;
-    padding: $spacing-8 $spacing-40;
-}
-
-.btn-custom-sm {
-    border-radius: 8px;
-    padding: $spacing-12 $spacing-16;
-}
-
-.icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.icon-md {
-    width: 40px;
-    height: 40px;
-}
-
-.icon-lg {
-    width: 60px;
-    height: 60px;
-}
-
-.icon-xl {
-    width: 60px;
-    height: 60px;
-}
-
 .rounded-24 {
     border-radius: 24px;
 }
@@ -62,18 +24,27 @@ $utilities: map-merge(
   $utilities,
   (
     "font-size":
-      map-merge(
+    map-merge(
         map-get($utilities, "font-size"),
         (
-          responsive: true,
+            responsive: true,
         )
       ),
 
-    "position": map-merge(
-      map-get($utilities, "position"),
-      (
-        responsive: true
-      )
+    "position":
+    map-merge(
+        map-get($utilities, "position"),
+        (
+            responsive: true,
+        )
     ),
+
+    "width":
+    map-merge(
+        map-get($utilities, "width"),
+        (
+            responsive: true,
+        )
+    )
   )
 );

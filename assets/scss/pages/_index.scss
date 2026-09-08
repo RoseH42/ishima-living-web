@@ -5,6 +5,7 @@ main {
 
 .hero {
     @include media-breakpoint-up (lg) {
+        height: calc((100vh - 80px));   // 扣除 margin
         position: relative;
     }       
 
@@ -18,6 +19,8 @@ main {
         border-radius: 24px;
 
         @include media-breakpoint-up (lg) {
+            height: 100%;
+            min-height: 0;  // 取消 100vh 高度
             background-image: url(https://github.com/hexschool/2022-web-layout-training/blob/main/2026-week8/index-hero-Image.png?raw=true);
             border-radius: 40px;
         }
@@ -38,10 +41,14 @@ main {
             }
         }
 
+        @include media-breakpoint-up (sm) {
+            background-position: -140px bottom;
+        }
+
         @include media-breakpoint-up (lg) {
-            background-size: 954px 766px;
+            background-size: 964px 766px;
             background-position: -104px bottom;
-            padding-top: 108px;
+            padding-top: 206px;
             padding-bottom: 168px;
         }
     }
@@ -54,14 +61,18 @@ main {
     border-radius: 20px;
 
     @include media-breakpoint-up (lg) {
-        max-width: 1238px;
+        min-width: 1238px;
         position: absolute;
-        left: 0;
+        left: -130px;
         bottom: 0px;
         padding-block: $spacing-24;
         padding-right: $spacing-40;
         border-radius: 0;
         border-top-right-radius: 40px;
+    }
+
+    @include media-breakpoint-up (xl) {
+        left: 0;
     }
     
     .select-wrapper {
@@ -109,7 +120,6 @@ main {
 }
 
 .why-us {
-    background-color: $gray-100;
     background-image: url(https://github.com/hexschool/2022-web-layout-training/blob/main/2026-week8/display1.png?raw=true);
     background-repeat: no-repeat;
     background-size: 176px 138px;
@@ -118,15 +128,14 @@ main {
     @include media-breakpoint-up (lg) {
         min-height: 100vh;
 
-        // 標題橘色石頭
+        // 標題橘色石頭、下方白色石頭
         background-image:
-            url(https://github.com/hexschool/2022-web-layout-training/blob/main/2026-week8/display1.png?raw=true);
-            // url(https://github.com/hexschool/2022-web-layout-training/blob/main/2026-week8/bg_stone_bottom.png?raw=true);
-        background-size: 280px 220px;
-        background-position: 154px 70px;
+            url(https://github.com/hexschool/2022-web-layout-training/blob/main/2026-week8/display1.png?raw=true),
+            url(https://github.com/hexschool/2022-web-layout-training/blob/main/2026-week8/bg_stone_top.png?raw=true);
+        background-size: 280px 220px, 100%;
+        background-position: 154px 70px, bottom;
 
         position: relative;
-        overflow: hidden;
 
         .container {
             position: relative;
@@ -215,8 +224,8 @@ main {
         background-repeat: no-repeat;
         background-size: 343px 290px;
         background-position: top;
-        padding: 24px 0px 25px 0px;    
-
+        padding: 24px 0px 25px 0px; 
+           
         @include media-breakpoint-up (lg) {
             min-height: 320px;
             background-size: 320px 290px;
@@ -227,7 +236,29 @@ main {
     }
 }
 
+@include media-breakpoint-between(lg, xxl) {
+    .why-us {
+        .row {
+            flex-wrap: nowrap;
+            justify-content: center;
+            gap: 0;
+        }
+
+        // 指定 .row 的直接子元素
+        .row > .col {
+            flex: 0 0 320px;
+            max-width: 320px;
+            margin-right: -30px;
+        }
+    }
+}
+
+
 .featured-property {
+    &-white {
+        background-color: $white;
+    }
+    
     .property-image {
         min-height: 207px;
         border: 0;
@@ -243,15 +274,19 @@ main {
         background-size: cover;
         background-repeat: no-repeat;
 
-        @include media-breakpoint-up (xl) {
-            min-width: 448px;
+        @include media-breakpoint-up (lg) {
+            flex: 1 1 0;
+            min-width: 0;
             min-height: 600px;
-            margin-left: $spacing-40;
+        }
+
+        @media (min-width: 1440px) {
+            flex: 0 0 448px;
+            min-height: 600px;
         }
 
         @include media-breakpoint-up (xxl) {
-            min-width: 688px;
-            min-height: 600px;
+            flex: 0 0 688px;
         }
     }
 
@@ -274,11 +309,9 @@ main {
     }
 }
 
-//  後來又研究了一下 Swiper 所以重新調整樣式，
-//  其他部分作為自行練習就不再多做調整更新，
-//  如有不妥再麻煩助教以第一次版本為主，謝謝
-
 .property-swiper {
+    flex: 1 1 0;
+    min-width: 0;
     height: 100%;
     --swiper-pagination-progressbar-size: 4px;
     --swiper-pagination-color: #{$secondary};
@@ -291,6 +324,11 @@ main {
             position: static;
             background-color: $primary-400;
             border-radius: 8px;
+            transition: background-color 0.15s;
+
+            &:hover {
+                background-color: $primary-300;
+            }
             
             .swiper-navigation-icon {
                 display: none;
@@ -316,40 +354,95 @@ main {
 }
 
 .mortgage-calculator {
+    @include media-breakpoint-up(lg) {
+        background-image: url(https://github.com/hexschool/2022-web-layout-training/blob/main/2026-week8/bg_stone_bottom.png?raw=true);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: top;
+    }
+
     .blob {
         width: 343px;    /* 對齊 SVG 的 width */
         height: 290px;   /* 對齊 SVG 的 height */
-        clip-path: url(#blob-shape);
+        clip-path: url(#blob-shape-mortgage);
 
-            @include media-breakpoint-up(lg) {
-                transform: translate(0px, 80px) scale(1.8);
-                transform-origin: center;
-            }
+        @include media-breakpoint-up(lg) {
+            transform: translateY(80px) scale(1.8);
+            transform-origin: center;
+
+            view-timeline-name: --mortgage-blob;
         }
+    }
+
+    .blob img {
+        @include media-breakpoint-up(lg) {
+            width: 100%;
+            height: 140%;      /* 比容器高，才有位移空間 */
+            object-fit: cover;
+            display: block;
+
+            animation: mortgage-parallax linear both;
+            animation-timeline: --mortgage-blob;    /* 2. 圖片引用這條進度軸 */
+            animation-range: cover 0% cover 100%;            
+        }
+    }
 }
+
+@keyframes mortgage-parallax {                /* 3. 定義位移 */
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-23%);
+    }
+}
+
 
 .ready-to-find-ideal-home {    
     overflow: visible;
+
+    @include media-breakpoint-up(lg) {
+        background-image: url(https://github.com/hexschool/2022-web-layout-training/blob/main/2026-week8/stone.png?raw=true);
+        background-size: 895px 636px;
+        background-repeat: no-repeat;
+        background-position: 53px 60px;
+    }
 
     .blob {
         width: 343px;    /* 對齊 SVG 的 width */
         height: 262px;   /* 對齊 SVG 的 height */
         clip-path: url(#blob-shape-home);
 
-            @include media-breakpoint-up(lg) {
-                transform: translate(330px, 280px) scale(3);
-                transform-origin: center;
-            }
+        @include media-breakpoint-up(lg) {
+            transform: translate(330px, 280px) scale(3);
+            transform-origin: center;
+            
+            view-timeline-name: --home-blob;
+        }
     }
+
     .blob img {
         width: 100%;
         height: 100%;
+
+        @include media-breakpoint-up(lg) {
+            width: 100%;
+            height: 140%;      /* 比容器高，才有位移空間 */
+            object-fit: cover;
+            display: block;
+
+            animation: home-parallax linear both;
+            animation-timeline: --home-blob;    /* 2. 圖片引用這條進度軸 */
+            animation-range: cover 0% cover 100%;            
+        }
     }    
 }
 
-
-
-
-
-
-
+@keyframes home-parallax {                /* 3. 定義位移 */
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-23%);
+    }
+}

@@ -10,7 +10,7 @@
         <%- include('./layout/header'); -%>
 
         <main>
-            <section class="hero px-4 px-lg-0 mb-10">
+            <section class="hero px-4 px-lg-0 mb-10 m-lg-9">
                 <div class="hero-bg mb-4">
                     <div class="hero-content-bg">
                         <div class="hero-content pt-9 ms-4">
@@ -20,7 +20,7 @@
                     </div>
                 </div>
 
-                <div class="search-bar">
+                <form class="search-bar">
                     <div class="container">
                         <div class="row row-cols-lg-5 gy-6">
 
@@ -31,9 +31,10 @@
                                     <div class="select-wrapper" data-icon="location_on">
                                         <select class="form-select" id="region" aria-label="region">
                                             <option selected>請選擇地區</option>
-                                            <option value="台北">台北</option>
-                                            <option value="新北">新北</option>
-                                            <option value="桃園">桃園</option>
+                                            <option value="台北市">台北市</option>
+                                            <option value="新北市">新北市</option>
+                                            <option value="桃園市">桃園市</option>
+                                            <option value="新竹市">新竹市</option>
                                         </select>
                                     </div>
                                 </div>
@@ -47,9 +48,10 @@
                                     <div class="select-wrapper" data-icon="home">
                                         <select class="form-select" id="houseType" aria-label="houseType">
                                             <option selected>請選擇房型</option>
-                                            <option value="雅房">雅房</option>
-                                            <option value="套房">套房</option>
-                                            <option value="家庭式">家庭式</option>
+                                            <option value="透天">透天</option>
+                                            <option value="公寓">公寓</option>
+                                            <option value="豪宅">豪宅</option>
+                                            <option value="別墅">別墅</option>
                                         </select>
                                     </div>
                                 </div>
@@ -63,9 +65,10 @@
                                     <div class="select-wrapper" data-icon="king_bed">
                                         <select class="form-select" id="roomAmount" aria-label="roomAmount">
                                             <option selected>請選擇房間數</option>
-                                            <option value="一房">一房</option>
-                                            <option value="兩房">兩房</option>
-                                            <option value="三房">三房</option>
+                                            <option value="1 間">1 間</option>
+                                            <option value="2 間">2 間</option>
+                                            <option value="3 間">3 間</option>
+                                            <option value="4 間">4 間</option>
                                         </select>
                                     </div>
                                 </div>
@@ -80,8 +83,9 @@
                                         <select class="form-select" id="housePrice" aria-label="housePrice">
                                             <option selected>請選擇價格區間</option>
                                             <option value="500 萬以下">500 萬以下</option>
-                                            <option value="500 萬至 1000 萬">500 萬至 1000 萬</option>
-                                            <option value="1000 萬至 1500 萬">1000 萬至 1500 萬</option>
+                                            <option value="500 ~ 1,000 萬">500 萬 ~ 1,000 萬</option>
+                                            <option value="1,000 ~ 2,000 萬">1,000 ~ 2,000 萬</option>
+                                            <option value="2,000 萬以上">2,000 萬以上</option>
                                         </select>
                                     </div>
                                 </div>
@@ -89,7 +93,7 @@
 
                             <!-- 搜尋按鈕 -->
                             <div class="col-12 d-flex align-items-lg-end">
-                                <button type="button" class="btn btn-primary w-100">
+                                <button type="button" class="btn btn-custom-primary w-100">
                                     <div class="d-flex gap-2 align-items-center justify-content-center">
                                         搜尋房源<span class="material-symbols-outlined icon-fs-sm">search</span>
                                     </div>
@@ -98,7 +102,7 @@
 
                         </div>
                     </div>
-                </div>
+                </form>
             </section>
 
             <section class="why-us py-10 py-lg-17">
@@ -164,12 +168,12 @@
                 </div>
             </section>
 
-            <section class="featured-property px-4 py-10">
+            <section class="featured-property featured-property-white px-4 py-10 ps-lg-9 pe-lg-0 py-lg-16">
                 <div class="d-lg-flex gap-lg-9">
-                    <div class="card text-white property-image p-6 mb-4">
+                    <div class="card text-white property-image p-6 px-lg-12 py-lg-10 mb-4">
                         <h2 class="card-title mb-3">精選房源</h2>
                         <p class="card-text h6 mb-5">為您精心挑選的優質物件</p>
-                        <button type="button" class="btn btn-gray-100 search-btn">
+                        <button type="button" class="btn btn-custom-white search-btn">
                             <div class="d-flex gap-2 align-items-center justify-content-center text-primary-400">
                                 查看更多房源<span class="material-symbols-outlined icon-fs-sm">arrow_forward</span>
                             </div>   
@@ -177,7 +181,7 @@
 
                         <div class="d-none d-lg-flex flex-lg-column mt-auto align-items-lg-end">
                             <span class="h6">精美物件</span>
-                            <span class="display-1 fw-bold">999+</span>
+                            <span class="fs-xl fw-bold">999+</span>
                         </div>
                     </div>
 
@@ -367,14 +371,14 @@
             <section class="mortgage-calculator py-10 py-lg-17">
                 <div class="container">
                     <div class="row">
-                        <div class="col-12 col-lg-6">
+                        <div class="col-12 col-lg-6 d-flex justify-content-center justify-content-lg-start">
                             <div class="blob mb-9 mb-lg-0">
                               <img src="../assets/images/mortgage-calculator-image.jpg" alt="室內實景">
                             </div>
 
                             <svg width="0" height="0" aria-hidden="true">
                                 <defs>
-                                    <clipPath id="blob-shape">
+                                    <clipPath id="blob-shape-mortgage">
                                         <path fill-rule="evenodd" clip-rule="evenodd" d="M190.587 287.086C258.963 290.048 323.473 243.825 340.499 177.644C355.246 120.323 302.001 76.5892 253.493 42.5722C208.347 10.9132 151.87 -17.878 106.622 13.6342C59.5185 46.4381 59.162 111.367 75.9947 166.187C94.0025 224.833 129.204 284.427 190.587 287.086Z" fill="url(#pattern0_4556_3631)"/>
                                         <path fill-rule="evenodd" clip-rule="evenodd" d="M43.6057 283.645C26.4282 280.129 7.48324 275.771 3.01924 258.88C-3.11208 235.68 -1.12793 206.728 20.4921 196.188C41.6732 185.861 62.6459 204.964 79.1648 221.757C95.1663 238.025 113.454 259.415 102.108 279.161C91.3728 297.846 64.7927 287.982 43.6057 283.645Z" fill="url(#pattern1_4556_3631)"/>
                                     </clipPath>
@@ -382,14 +386,14 @@
                             </svg>
 
                         </div>
-                        <div class="col-12 col-lg-6">
-                            <div class="mb-8">
-                                <h2 class="mb-3">房貸試算工具</h2>
+                        <div class="col-12 col-lg-6 px-lg-5">
+                            <div class="mb-8 mb-lg-10">
+                                <h2 class="mb-3 mb-lg-5">房貸試算工具</h2>
                                 <p class="h6 text-default">輕鬆計算您的月付金額，提前規劃購屋預算，讓買房更有信心</p>
                             </div>
 
-                            <div class="d-flex flex-column gap-4 mb-9">
-                                <div class="d-flex gap-3">
+                            <ul class="d-flex flex-column flex-lg-row gap-4 px-2 mb-9 mb-lg-12">
+                                <li class="col-lg-4 d-flex flex-lg-column gap-3 px-lg-4">
                                     <div class="icon icon-xl text-white bg-secondary rounded-circle">
                                         <span class="material-symbols-outlined icon-fs-lg">paid</span>
                                     </div>
@@ -399,9 +403,9 @@
                                             本息攤還、寬限期等多種還款方式比較
                                         </p>
                                     </div>
-                                </div>
+                                </li>
 
-                                <div class="d-flex gap-3">
+                                <li class="col-lg-4 d-flex flex-lg-column gap-3 px-lg-4">
                                     <div class="icon icon-xl text-white bg-secondary rounded-circle">
                                         <span class="material-symbols-outlined icon-fs-lg">trending_up</span>
                                     </div>
@@ -411,9 +415,9 @@
                                             整合各大銀行最新貸款利率
                                         </p>
                                     </div>
-                                </div>
+                                </li>
 
-                                <div class="d-flex gap-3">
+                                <li class="col-lg-4 d-flex flex-lg-column gap-3 px-lg-4">
                                     <div class="icon icon-xl text-white bg-secondary rounded-circle">
                                         <span class="material-symbols-outlined icon-fs-lg">calendar_check</span>
                                     </div>
@@ -423,10 +427,10 @@
                                             完整時間表，掌握每期本金與利息
                                         </p>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="px-4">
-                                <button type="button" class="btn btn-primary w-100">
+                                </li>
+                            </ul>
+                            <div class="col-lg-4 px-4 px-lg-0">
+                                <button type="button" class="btn btn-custom-primary w-100">
                                     <div class="d-flex gap-2 align-items-center justify-content-center">
                                         立即試算<span class="material-symbols-outlined icon-fs-sm">arrow_forward</span>
                                     </div>
@@ -441,7 +445,7 @@
             <section class="ready-to-find-ideal-home py-10">
                 <div class="container">
                     <div class="row flex-lg-row-reverse">
-                        <div class="col-12 col-lg-6">
+                        <div class="col-12 col-lg-6 d-flex justify-content-center justify-content-lg-start">
                             <div class="blob mb-9 mb-lg-0">
                                 <img src="../assets/images/ready-to-find-ideal-home-image.jpg" alt="室內實景">
                             </div>
@@ -470,19 +474,19 @@
                                     </p>
                                 </div>
                                 <div class="col-lg-8 d-flex gap-3">
-                                    <button type="button" class="btn badge-outline-primary btn-custom-sm w-100">
+                                    <button type="button" class="btn btn-custom-outline btn-custom-sm w-100">
                                         <div class="d-flex gap-2 align-items-center justify-content-center">
                                             房貸試算<span class="material-symbols-outlined icon-fs-sm">paid</span>
                                         </div>
                                     </button>
 
-                                    <button type="button" class="btn btn-primary btn-custom btn-custom-sm w-100">
+                                    <button type="button" class="btn btn-custom-primary btn-custom-sm w-100">
                                         <div class="d-flex gap-2 align-items-center justify-content-center">
                                             開始搜尋房源<span class="material-symbols-outlined icon-fs-sm">arrow_forward</span>
                                         </div>
                                     </button>
                                 </div>
-                            </div>
+                            </div>                                
                         </div>
                     </div>
                 </div> 
