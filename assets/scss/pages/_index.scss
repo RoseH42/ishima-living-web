@@ -69,6 +69,18 @@ main {
         padding-right: $spacing-40;
         border-radius: 0;
         border-top-right-radius: 40px;
+
+        &::after {
+            content: "";
+            position: absolute;
+            right: -40px;
+            bottom: 0;
+            width: 40px;
+            height: 40px;
+            background-color: transparent;
+            border-bottom-left-radius: 40px;
+            box-shadow: -10px 10px 0 10px $gray-100;
+        }
     }
 
     @include media-breakpoint-up (xl) {

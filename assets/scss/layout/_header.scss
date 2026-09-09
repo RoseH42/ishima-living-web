@@ -14,7 +14,6 @@ html {
     }
 
     @include media-breakpoint-up (lg) {
-        // margin-top: 56px;
         padding: 16px 80px;
         position: fixed;
         top: 56px;
